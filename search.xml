@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F24%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[MDK5软件介绍]]></title>
+    <url>%2F2019%2F03%2F26%2FMDK5%2F</url>
+    <content type="text"><![CDATA[一、STM32 官方固件库简介​ ST(意法半导体)为了方便用户开发程序，提供了一套丰富的 STM32 固件库。到底什么是固件库？它与直接操作寄存器开发有什么区别和联系？很多初学用户很是费解，这一节，我们将讲解 STM32 固件库相关的基础知识，希望能够让大家对 STM32 固件库有一个初步的了解，至于固件库的详细使用方法，我们会在后面的章节一一介绍。这章节有一些图片是截图的权威手册。这一节的知识可以参考《STM32 固件库使用手册中文翻译版》 P32，固件库手册讲解更加详细，这里只是提到一下，希望大家谅解。 二、库开发与寄存器开发的关系​ 很多用户都是从学 51 单片机开发转而想进一步学习 STM32 开发，他们习惯了 51 单片机的寄存器开发方式，突然一个 ST 官方库摆在面前会一头雾水，不知道从何下手。下面我们将通过一个简单的例子来告诉 STM32 固件库到底是什么，和寄存器开发有什么关系？其实一句话就可以概括：固件库就是函数的集合，固件库函数的作用是向下负责与寄存器直接打交道，向上提供用户函数调用的接口（ API）。​ 在 51 的开发中我们常常的作法是直接操作寄存器，比如要控制某些 IO 口的状态，我们直接操作寄存器： 1P0=0x11; 而在 STM32 的开发中，我们同样可以操作寄存器： 1GPIOx-&gt;BRR = 0x0011; ​ 这种方法当然可以，但是这种方法的劣势是你需要去掌握每个寄存器的用法，你才能正确使用STM32，而对于 STM32 这种级别的 MCU，数百个寄存器记起来又是谈何容易。于是 ST(意法半导体)推出了官方固件库，固件库将这些寄存器底层操作都封装起来，提供一整套接口（ API）供开发者调用，大多数场合下，你不需要去知道操作的是哪个寄存器，你只需要知道调用哪些函数即可。 比如上面的控制 BRR 寄存器实现电平控制，官方库封装了一个函数： 1234void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)&#123;GPIOx-&gt;BRR = GPIO_Pin; &#125; ​ 这个时候你不需要再直接去操作 BRR 寄存器了，你只需要知道怎么使用 GPIO_ResetBits()这个函数就可以了。在你对外设的工作原理有一定的了解之后，你再去看固件库函数，基本上函数名字能告诉你这个函数的功能是什么，该怎么使用，这样是不是开发会方便很多？任何处理器，不管它有多么的高级，归根结底都是要对处理器的寄存器进行操作。但是固件库不是万能的，您如果想要把 STM32 学透，光读 STM32 固件库是远远不够的。你还是要了解一下 STM32 的原理，而这些原理了解了，你在进行固件库开发过程中才可能得心应手游刃有余。 二、STM32 官方库包介绍]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>物联网</tag>
+      </tags>
   </entry>
 </search>
