@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  1.5k
                 </span>
               
 
@@ -432,7 +432,7 @@
 <p>​        代码包含了#include “led.h”这句，使得 LED0、 LED1、 LED_Init 等能在 main()函数里被调用。这里我们需要重申的是，在固件库 V3.5 中，系统在启动的时候会调用 system_stm32f10x.c 中的函数 SystemInit()对系统时钟进行初始化，在时钟初始化完毕之后会调用 main()函数。 所以我们不需要再在 main()函数中调用 SystemInit()函数。当然如果有需要重新设置时钟系统，可以写自己的时钟设置代码， SystemInit()只是将时钟系统初始化为默认状态。main()函数非常简单，先调用 delay_init()初始化延时，接着就是调用 LED_Init()来初始化GPIOE.6 和 GPIOE.5 为输出。最后在死循环里面实现 LED0 和 LED1 交替闪烁，间隔为 300ms。上面是通过位带操作实现的 IO 操作， 对于通过调用库函数以及直接操作寄存器来实现 LED控制的方法， 在我们 main.c 文件中我们已经注释掉， 大家可以取消注释分别来测试这两种方法，实际效果是一模一样的。 </p>
 <hr>
 <p>​        接下我们点击编译工程就能看到程序编译是没有问题的，如下图所示：</p>
-<p><img src="E:\多媒体\图片\截图\LED.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Build started: Project: 1_LED</span><br><span class="line">*** Using Compiler &apos;V5.06 update 6 (build 750)&apos;, folder: &apos;D:\Program\Keil5\ARM\ARMCC\Bin&apos;</span><br><span class="line">Build target &apos;LED&apos;</span><br><span class="line">compiling main.c...</span><br><span class="line">compiling stm32f10x_it.c...</span><br><span class="line">compiling LED.c...</span><br><span class="line">compiling system_stm32f10x.c...</span><br><span class="line">compiling core_cm3.c...</span><br><span class="line">assembling startup_stm32f10x_hd.s...</span><br><span class="line">compiling usart.c...</span><br><span class="line">compiling delay.c...</span><br><span class="line">compiling sys.c...</span><br><span class="line">compiling misc.c...</span><br><span class="line">compiling stm32f10x_gpio.c...</span><br><span class="line">compiling stm32f10x_rcc.c...</span><br><span class="line">compiling stm32f10x_usart.c...</span><br><span class="line">linking...</span><br><span class="line">Program Size: Code=1488 RO-data=336 RW-data=32 ZI-data=2656  </span><br><span class="line">FromELF: creating hex file...</span><br><span class="line">&quot;..\OBJ\LED.axf&quot; - 0 Error(s), 0 Warning(s).</span><br><span class="line">Build Time Elapsed:  00:00:03</span><br></pre></td></tr></table></figure>
 <p>​    最后我们下载程序到自己的开发板验证程序结果。</p>
 
           
@@ -535,10 +535,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -546,10 +546,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -614,7 +614,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.3k</span>
+    <span title="Site words total count">1.5k</span>
   
 </div>
 
