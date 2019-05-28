@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="一、STM32 官方固件库简介​        ST(意法半导体)为了方便用户开发程序，提供了一套丰富的 STM32 固件库。到底什么是固件库？它与直接操作寄存器开发有什么区别和联系？很多初学用户很是费解，这一节，我们将讲解 STM32 固件库相关的基础知识，希望能够让大家对 STM32 固件库有一个初步的了解，至于固件库的详细使用方法，我们会在后面的章节一一介绍。这章节有一些图片是截图的权威手册">
+<meta name="description" content="​        STM32 最简单的外设莫过于 IO 口的高低电平控制了， 本章将通过一个经典的跑马灯程序，带大家开启 STM32F1 之旅，通过本章的学习，你将了解到 STM32F1 的 IO 口作为输出使用的方法。在本章中，我们将通过代码控制无线传感器网络实验平台 TDL-02 开发板上的两个 LED：DS1 和 DS2 交替闪烁，实现类似跑马灯的效果。 本章分为如下四个小节： 1、 LED">
 <meta name="keywords" content="物联网">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MDK5软件介绍">
-<meta property="og:url" content="http://yoursite.com/2019/03/26/MDK5/index.html">
+<meta property="og:title" content="跑马灯实验">
+<meta property="og:url" content="http://yoursite.com/2019/03/26/基于STM32的跑马灯实验/index.html">
 <meta property="og:site_name" content="Blog of Mr.Yunziz">
-<meta property="og:description" content="一、STM32 官方固件库简介​        ST(意法半导体)为了方便用户开发程序，提供了一套丰富的 STM32 固件库。到底什么是固件库？它与直接操作寄存器开发有什么区别和联系？很多初学用户很是费解，这一节，我们将讲解 STM32 固件库相关的基础知识，希望能够让大家对 STM32 固件库有一个初步的了解，至于固件库的详细使用方法，我们会在后面的章节一一介绍。这章节有一些图片是截图的权威手册">
+<meta property="og:description" content="​        STM32 最简单的外设莫过于 IO 口的高低电平控制了， 本章将通过一个经典的跑马灯程序，带大家开启 STM32F1 之旅，通过本章的学习，你将了解到 STM32F1 的 IO 口作为输出使用的方法。在本章中，我们将通过代码控制无线传感器网络实验平台 TDL-02 开发板上的两个 LED：DS1 和 DS2 交替闪烁，实现类似跑马灯的效果。 本章分为如下四个小节： 1、 LED">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-26T14:33:22.425Z">
+<meta property="og:image" content="e:/多媒体/图片/截图/LED.png">
+<meta property="og:updated_time" content="2019-05-28T07:20:23.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MDK5软件介绍">
-<meta name="twitter:description" content="一、STM32 官方固件库简介​        ST(意法半导体)为了方便用户开发程序，提供了一套丰富的 STM32 固件库。到底什么是固件库？它与直接操作寄存器开发有什么区别和联系？很多初学用户很是费解，这一节，我们将讲解 STM32 固件库相关的基础知识，希望能够让大家对 STM32 固件库有一个初步的了解，至于固件库的详细使用方法，我们会在后面的章节一一介绍。这章节有一些图片是截图的权威手册">
+<meta name="twitter:title" content="跑马灯实验">
+<meta name="twitter:description" content="​        STM32 最简单的外设莫过于 IO 口的高低电平控制了， 本章将通过一个经典的跑马灯程序，带大家开启 STM32F1 之旅，通过本章的学习，你将了解到 STM32F1 的 IO 口作为输出使用的方法。在本章中，我们将通过代码控制无线传感器网络实验平台 TDL-02 开发板上的两个 LED：DS1 和 DS2 交替闪烁，实现类似跑马灯的效果。 本章分为如下四个小节： 1、 LED">
+<meta name="twitter:image" content="e:/多媒体/图片/截图/LED.png">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/26/MDK5/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/26/基于STM32的跑马灯实验/">
 
 
 
 
 
-  <title>MDK5软件介绍 | Blog of Mr.Yunziz</title>
+  <title>跑马灯实验 | Blog of Mr.Yunziz</title>
   
 
 
@@ -309,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/MDK5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/基于STM32的跑马灯实验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -326,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MDK5软件介绍</h1>
+          <h1 class="post-title" itemprop="name headline">跑马灯实验</h1>
         
 
         <div class="post-meta">
@@ -360,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  847
+                  1.3k
                 </span>
               
 
@@ -376,7 +378,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -397,16 +399,41 @@
       
 
       
-        <h2 id="一、STM32-官方固件库简介"><a href="#一、STM32-官方固件库简介" class="headerlink" title="一、STM32 官方固件库简介"></a>一、STM32 官方固件库简介</h2><p>​        ST(意法半导体)为了方便用户开发程序，提供了一套丰富的 STM32 固件库。到底什么是固件库？它与直接操作寄存器开发有什么区别和联系？很多初学用户很是费解，这一节，我们将讲解 STM32 固件库相关的基础知识，希望能够让大家对 STM32 固件库有一个初步的了解，至于固件库的详细使用方法，我们会在后面的章节一一介绍。这章节有一些图片是截图的权威手册。这一节的知识可以参考《STM32 固件库使用手册中文翻译版》 P32，固件库手册讲解更加详细，这里只是提到一下，希望大家谅解。 </p>
-<h2 id="二、库开发与寄存器开发的关系"><a href="#二、库开发与寄存器开发的关系" class="headerlink" title="二、库开发与寄存器开发的关系"></a>二、库开发与寄存器开发的关系</h2><p>​        很多用户都是从学 51 单片机开发转而想进一步学习 STM32 开发，他们习惯了 51 单片机的寄存器开发方式，突然一个 ST 官方库摆在面前会一头雾水，不知道从何下手。下面我们将通过一个简单的例子来告诉 STM32 固件库到底是什么，和寄存器开发有什么关系？其实一句话就可以概括：固件库就是函数的集合，固件库函数的作用是向下负责与寄存器直接打交道，向上提供用户函数调用的接口（ API）。<br>​        在 51 的开发中我们常常的作法是直接操作寄存器，比如要控制某些 IO 口的状态，我们直接操作寄存器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P0=0x11;</span><br></pre></td></tr></table></figure>
-<p>而在 STM32 的开发中，我们同样可以操作寄存器： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIOx-&gt;BRR = 0x0011;</span><br></pre></td></tr></table></figure>
-<p>​        这种方法当然可以，但是这种方法的劣势是你需要去掌握每个寄存器的用法，你才能正确使用STM32，而对于 STM32 这种级别的 MCU，数百个寄存器记起来又是谈何容易。于是 ST(意法半导体)推出了官方固件库，固件库将这些寄存器底层操作都封装起来，提供一整套接口（ API）供开发者调用，大多数场合下，你不需要去知道操作的是哪个寄存器，你只需要知道调用哪些函数即可。 </p>
-<p>比如上面的控制 BRR 寄存器实现电平控制，官方库封装了一个函数： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)</span><br><span class="line">&#123;</span><br><span class="line">GPIOx-&gt;BRR = GPIO_Pin; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​        这个时候你不需要再直接去操作 BRR 寄存器了，你只需要知道怎么使用 GPIO_ResetBits()这个函数就可以了。在你对外设的工作原理有一定的了解之后，你再去看固件库函数，基本上函数名字能告诉你这个函数的功能是什么，该怎么使用，这样是不是开发会方便很多？<br>任何处理器，不管它有多么的高级，归根结底都是要对处理器的寄存器进行操作。但是固<br>件库不是万能的，您如果想要把 STM32 学透，光读 STM32 固件库是远远不够的。你还是要了解一下 STM32 的原理，而这些原理了解了，你在进行固件库开发过程中才可能得心应手游刃有余。 </p>
-<h2 id="二、STM32-官方库包介绍"><a href="#二、STM32-官方库包介绍" class="headerlink" title="二、STM32 官方库包介绍"></a>二、STM32 官方库包介绍</h2>
+        <p>​        STM32 最简单的外设莫过于 IO 口的高低电平控制了， 本章将通过一个经典的跑马灯程序，带大家开启 STM32F1 之旅，通过本章的学习，你将了解到 STM32F1 的 IO 口作为输出使用的方法。在本章中，我们将通过代码控制无线传感器网络实验平台 TDL-02 开发板上的两个 LED：DS1 和 DS2 交替闪烁，实现类似跑马灯的效果。 本章分为如下四个小节：</p>
+<p>1、 LED.c 文件<br>2、 LED.h 文件<br>3、 main.c文件<br>4、下载</p>
+<h2 id="一、LED-c-文件"><a href="#一、LED-c-文件" class="headerlink" title="一、LED.c 文件"></a>一、LED.c 文件</h2><p>​        STM32 的 IO 口相比 51 而言要复杂得多，所以使用起来也困难很多。首先 STM32 的 IO 口可以由软件配置成如下 8 种模式： </p>
+<p>​        1、输入浮空<br>​        2、输入上拉<br>​        3、输入下拉<br>​        4、模拟输入<br>​        5、开漏输出<br>​        6、推挽输出<br>​        7、推挽式复用功能<br>​        8、开漏复用功能 </p>
+<p>​        对于GPIO端口的设置主要在下面的结构体中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; uint16_t GPIO_Pin;</span><br><span class="line">	GPIOSpeed_TypeDef GPIO_Speed;</span><br><span class="line">	GPIOMode_TypeDef GPIO_Mode;</span><br><span class="line">&#125;GPIO_InitTypeDef;</span><br></pre></td></tr></table></figure>
+<p>​        下面我们通过一个 GPIO 初始化实例来讲解这个结构体的成员变量的含义。通过初始化结构体初始化 GPIO 的常用格式是： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_5;		//LED0--&gt;PE.6  LED1--&gt;PE.5</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;			//推挽输出</span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;			//IO口输出速度为50MHz</span><br></pre></td></tr></table></figure>
+<p>​        但是一定要注意的是所使用的外设或者是GPIO端口在进行配置之前一定要使能时钟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE,ENABLE);		//使能PE端口时钟</span><br></pre></td></tr></table></figure>
+<p>​        上面代码的意思是设置 GPIOE 的第 5 个端口为推挽输出模式，同时速度为 50M。从上面初始<br>化代码可以看出，结构体 GPIO_InitStructure 的第一个成员变量 GPIO_Pin 用来设置是要初始化<br>哪个或者哪些 IO 口；第二个成员变量 GPIO_Mode 是用来设置对应 IO 端口的输出输入模式，<br>这些模式是上面我们讲解的 8 个模式，在 MDK 中是通过一个枚举类型定义的： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typedef enum</span><br><span class="line">&#123; GPIO_Mode_AIN = 0x0, //模拟输入</span><br><span class="line">GPIO_Mode_IN_FLOATING = 0x04, //浮 空 输 入</span><br><span class="line">GPIO_Mode_IPD = 0x28, //下拉输入</span><br><span class="line">GPIO_Mode_IPU = 0x48, //上拉输入</span><br><span class="line">GPIO_Mode_Out_OD = 0x14, //开漏输出</span><br><span class="line">GPIO_Mode_Out_PP = 0x10, //通用推挽输出</span><br><span class="line">GPIO_Mode_AF_OD = 0x1C, //复用开漏输出</span><br><span class="line">GPIO_Mode_AF_PP = 0x18 //复用推挽</span><br><span class="line">&#125;GPIOMode_TypeDef;</span><br></pre></td></tr></table></figure>
+<p>​        第三个参数是 IO 口速度设置，有三个可选值，在 MDK 中同样是通过枚举类型定义： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef enum</span><br><span class="line">&#123;</span><br><span class="line">GPIO_Speed_10MHz = 1,</span><br><span class="line">GPIO_Speed_2MHz,</span><br><span class="line">GPIO_Speed_50MHz</span><br><span class="line">&#125;GPIOSpeed_TypeDef;</span><br></pre></td></tr></table></figure>
+<p>​        接下来就是调用库函数里的GPIO_Init（）；进行GPIO的初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIO_Init(GPIOE,&amp;GPIO_InitStructure);						</span><br><span class="line">//根据设定参数初始化（GPIOE6,GPIOE5）</span><br></pre></td></tr></table></figure>
+<p>​        再调用GPIO_SetBits（）函数将PE5和PE6设置设置为高电平（共阳极即为 ‘0’点亮）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIO_SetBits(GPIOE,GPIO_Pin_6 | GPIO_Pin_5);</span><br></pre></td></tr></table></figure>
+<p>​        这样的话我们的LED.c这个文件就写好了。同时我们也大致的了解了一下关于GPIO端口的配置要注意的模式，输出速度，以及引脚，这里需要注意的是引脚只有在设置为输出模式的时候是会通过来设置这个引脚的具体的输出速度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;			//IO口输出速度为50MHz</span><br></pre></td></tr></table></figure>
+<h2 id="二、LED-h-文件"><a href="#二、LED-h-文件" class="headerlink" title="二、LED.h 文件"></a>二、LED.h 文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#ifndef LED_H</span><br><span class="line">#define LED_H</span><br><span class="line"></span><br><span class="line">#include &quot;sys.h&quot;</span><br><span class="line"></span><br><span class="line">#define LED0 PEout(6)</span><br><span class="line">#define LED1 PEout(5)</span><br><span class="line"></span><br><span class="line">void LED_Init(void);</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>​        这段代码里面最关键就是 2 个宏定义： 这里使用的是位带操作来实现操作某个 IO 口的 1 个位的 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define LED0 PEout(6)// DS1</span><br><span class="line">#define LED1 PEout(5)// DS2</span><br></pre></td></tr></table></figure>
+<p>​        库函数操作方法如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIO_SetBits(GPIOE, GPIO_Pin_6);//设置 GPIOE.6 输出 1,等同 LED0=1;</span><br><span class="line">GPIO_ResetBits (GPIOE, GPIO_Pin_6);//设置 GPIOE.6 输出 0,等同 LED0=0;</span><br></pre></td></tr></table></figure>
+<p>​        直接操作寄存器BRR 和 BSRR 的方式来操作 IO 口输出高低电平，方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIOE-&gt;BRR=GPIO_Pin_6; //设置 GPIOE.6 输出 1,等同 LED0=1;</span><br><span class="line">GPIOE-&gt;BSRR=GPIO_Pin_6; //设置 GPIOE.6 输出 0,等同 LED0=0;</span><br></pre></td></tr></table></figure>
+<h2 id="三、main-c"><a href="#三、main-c" class="headerlink" title="三、main.c"></a>三、main.c</h2><p>​        在 main 函数里面编写如下代码： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stm32f10x.h&quot;</span><br><span class="line">#include &quot;delay.h&quot;</span><br><span class="line">#include &quot;led.h&quot;</span><br><span class="line"></span><br><span class="line">int main ( void )</span><br><span class="line">&#123;</span><br><span class="line">	delay_init();</span><br><span class="line">	LED_Init ();</span><br><span class="line">	while(1)</span><br><span class="line">	&#123;</span><br><span class="line">		LED0 = 0;</span><br><span class="line">		LED1 = 1;</span><br><span class="line">		delay_ms( 300 );</span><br><span class="line">		LED0 = 1;</span><br><span class="line">		LED1 = 0;</span><br><span class="line">		delay_ms( 300 );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        代码包含了#include “led.h”这句，使得 LED0、 LED1、 LED_Init 等能在 main()函数里被调用。这里我们需要重申的是，在固件库 V3.5 中，系统在启动的时候会调用 system_stm32f10x.c 中的函数 SystemInit()对系统时钟进行初始化，在时钟初始化完毕之后会调用 main()函数。 所以我们不需要再在 main()函数中调用 SystemInit()函数。当然如果有需要重新设置时钟系统，可以写自己的时钟设置代码， SystemInit()只是将时钟系统初始化为默认状态。main()函数非常简单，先调用 delay_init()初始化延时，接着就是调用 LED_Init()来初始化GPIOE.6 和 GPIOE.5 为输出。最后在死循环里面实现 LED0 和 LED1 交替闪烁，间隔为 300ms。上面是通过位带操作实现的 IO 操作， 对于通过调用库函数以及直接操作寄存器来实现 LED控制的方法， 在我们 main.c 文件中我们已经注释掉， 大家可以取消注释分别来测试这两种方法，实际效果是一模一样的。 </p>
+<hr>
+<p>​        接下我们点击编译工程就能看到程序编译是没有问题的，如下图所示：</p>
+<p><img src="E:\多媒体\图片\截图\LED.png" alt></p>
+<p>​    最后我们下载程序到自己的开发板验证程序结果。</p>
+
       
     </div>
     
@@ -594,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、STM32-官方固件库简介"><span class="nav-number">1.</span> <span class="nav-text">一、STM32 官方固件库简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、库开发与寄存器开发的关系"><span class="nav-number">2.</span> <span class="nav-text">二、库开发与寄存器开发的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、STM32-官方库包介绍"><span class="nav-number">3.</span> <span class="nav-text">二、STM32 官方库包介绍</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、LED-c-文件"><span class="nav-number">1.</span> <span class="nav-text">一、LED.c 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、LED-h-文件"><span class="nav-number">2.</span> <span class="nav-text">二、LED.h 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、main-c"><span class="nav-number">3.</span> <span class="nav-text">三、main.c</span></a></li></ol></div>
             
 
           </div>
@@ -628,7 +655,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">847</span>
+    <span title="Site words total count">1.3k</span>
   
 </div>
 
